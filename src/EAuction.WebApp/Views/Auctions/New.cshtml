@@ -1,0 +1,97 @@
+﻿@model EAuction.WebApp.Models.AuctionViewModel
+@{
+    ViewData["Title"] = "Novo Leilão";
+}
+
+<form class="container" asp-action="Novo" asp-controller="Leiloes" enctype="multipart/form-data">
+    <h4>Inclusão de Leilão</h4>
+    <div class="row">
+        <div class="col s12 m8">
+            <div class="card">
+                <div class="card-content">
+                    <h5 class="card-title">Informações básicas</h5>
+                    <div class="input-field">
+                        <input asp-for="Title" class="validate" />
+                        <label asp-for="Title"></label>
+                        <span class="helper-text msg-erro" asp-validation-for="Title"></span>
+                    </div>
+                    <!--div.input-field titulo-->
+                    <div class="input-field">
+                        <textarea asp-for="Description" class="validate materialize-textarea" data-length="120"></textarea>
+                        <label asp-for="Description"></label>
+                        <span class="helper-text msg-erro" asp-validation-for="Description"></span>
+                    </div>
+                    <!--div.input-field descricao-->
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <select asp-for="Category">
+                                <option value="Automóveis">Automóveis</option>
+                                <option value="Item de Colecionador">Item de Colecionador</option>
+                                <option value="Arte e Pintura">Arte e Pintura</option>
+                            </select>
+                            <label asp-for="Category"></label>
+                            <span class="helper-text msg-erro" asp-validation-for="Category"></span>
+                        </div>
+                        <!--div.input-field categoria-->
+                        <div class="input-field col s6">
+                            <input asp-for="InitialAmount" class="validate">
+                            <label asp-for="InitialAmount"></label>
+                            <span class="helper-text msg-erro" asp-validation-for="InitialAmount"></span>
+                        </div>
+                        <!--div.input-field valorInicial-->
+                    </div>
+                    <!--div.row-->
+                </div>
+                <!--div.card-content-->
+                <div class="card-action">
+                    <button type="submit" class="btn waves-effect waves-light z-depth-0"><i class="material-icons left">archive</i>Salvar</button>
+                </div>
+            </div>
+            <!--div.card-->
+        </div>
+        <!--div.col1 infoBasica-->
+        <div class="col s12 m4">
+            <div class="card imagem">
+                <div class="card-image file-field">
+                    <img id="imgPoster" class="responsive-img" src="~/images/poster-vazio.png" />
+                    <a class="btn-floating halfway-fab waves-effect waves-light">
+                        <i class="material-icons">mode_edit</i>
+                        <input asp-for="FileImage">
+                    </a>
+                </div>
+                <!--div.card-image-->
+                <div class="card-content">
+                    <span class="msg-erro" asp-validation-for="FileImage">Nenhuma imagem definida.</span>
+                </div>
+                <!--div.card-content-->
+            </div>
+            <!--div.card-->
+        </div>
+        <!--div.col2 imagem-->
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Pregão</span>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input type="text" asp-for="StartAuctionDate" class="validate datepicker">
+                            <label asp-for="StartAuctionDate"></label>
+                            <span class="helper-text msg-erro" asp-validation-for="StartAuctionDate"></span>
+                        </div>
+                        <div class="input-field col s6">
+                            <input type="text" asp-for="FinishAuctionDate" class="validate datepicker">
+                            <label asp-for="FinishAuctionDate"></label>
+                            <span class="helper-text msg-erro" asp-validation-for="FinishAuctionDate"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--div.card-content-->
+            </div>
+            <!--div.card-->
+        </div>
+        <!--div.col3 infoPregao-->
+    </div>
+    <!--div.row-->
+        
+</form>
+

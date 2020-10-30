@@ -1,0 +1,45 @@
+﻿@model EAuction.WebApp.Models.AuctionViewModel
+@{
+    ViewData["Title"] = "Detalhes do Leilão";
+    var loggedUser = Context.Session.Get<User>("loggedUser");
+    BidViewModel bid = null;
+    if (loggedUser != null)
+    {
+        bid = new BidViewModel
+        {
+            AuctionId = Model.Id,
+            LoggedUserId = loggedUser.Id
+        };
+    }
+}
+
+<div class="container">
+    <div class="row leilao" data-id="@Model.Id">
+        <div class="col s12 m7">
+            <div class="card imagens">
+                <div class="card-image">
+                    <img class="responsive-img" src="@Model.Image" />
+                </div>
+            </div>
+            <!--div.card-->
+        </div>
+        <!--div.imagens-->
+        <div class="col s12 m5">
+            <div class="card info">
+                <div class="card-content">
+                    <span class="card-title">@Model.Title</span>
+                    <p>@Model.Description</p>
+                </div>
+            </div>
+            <!--div.card.info-->
+        </div>
+        <!--div.info-->
+        <div class="col s12 m5">
+            @Html.DisplayFor(
+                a => a.State, 
+                Model.State.ToString(), "", 
+                new { Auction = Model, LoggedUser = loggedUser })
+        </div>
+    </div>
+    <!--div.leilao-->
+</div>
