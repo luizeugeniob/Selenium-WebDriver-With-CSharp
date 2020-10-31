@@ -5,7 +5,8 @@ namespace EAuction.WebApp.Models
     public class RegisterViewModel
     {
         [Required]
-        public string Nome { get; set; }
+        [Display(Name = "Nome")]
+        public string Name { get; set; }
 
         [Required]
         [Display(Name = "Endereço de Email")]

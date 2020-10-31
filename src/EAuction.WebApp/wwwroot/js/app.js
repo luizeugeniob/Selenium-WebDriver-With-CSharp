@@ -1,16 +1,16 @@
-﻿function seguirLeilao(dados, onsucess, onerror) {
+﻿function followAuction(data, onsucess, onerror) {
     $.post(
-        '/Interessadas/SeguirLeilao',
-        dados,
+        '/Interested/FollowAuction',
+        data,
         onsucess,
         onerror
     );
 }
 
-function abandonarLeilao(dados, onsucess, onerror) {
+function abandonAuction(data, onsucess, onerror) {
     $.post(
-        '/Interessadas/AbandonarLeilao',
-        dados,
+        '/Interested/AbandonAuction',
+        data,
         onsucess,
         onerror
     );

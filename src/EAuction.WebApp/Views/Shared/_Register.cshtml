@@ -1,10 +1,10 @@
 ﻿@model EAuction.WebApp.Models.RegisterViewModel
 
-<form class="card-panel" asp-action="Registro" asp-controller="Usuarios">
+<form class="card-panel" asp-action="Insert" asp-controller="User">
     <div class="input-field">
-        <input asp-for="Nome" />
-        <label asp-for="Nome"></label>
-        <span class="helper-text msg-erro" asp-validation-for="Nome"></span>
+        <input asp-for="Name" />
+        <label asp-for="Name"></label>
+        <span class="helper-text msg-erro" asp-validation-for="Name"></span>
     </div>
     <div class="input-field">
         <input asp-for="Email" />
@@ -21,5 +21,5 @@
         <label asp-for="ConfirmPassword"></label>
         <span class="helper-text msg-erro" asp-validation-for="ConfirmPassword"></span>
     </div>
-    <button id="btnRegistro" class="btn waves-effect waves-light brown darken-3 z-depth-0">Registrar</button>
+    <button id="btnRegister" class="btn waves-effect waves-light brown darken-3 z-depth-0">Registrar</button>
 </form>

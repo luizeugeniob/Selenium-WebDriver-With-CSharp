@@ -67,7 +67,7 @@ function readPosterURL(input) {
             e.preventDefault();
             const link = $(e.target).parent();
 
-            seguirLeilao(
+            followAuction(
                 $(link).data(),
                 function () {
                     M.toast({ html: 'Agora você está seguindo o leilão!' });
@@ -89,7 +89,7 @@ function readPosterURL(input) {
             //chamar a função abandonarLeilao com funções de sucesso e erro
 
             //enviar requisição para deixar de seguir o leilão
-            abandonarLeilao(
+            abandonAuction(
                 $(link).data(),
                 function () {
                     console.log('leilão foi abandonado!');

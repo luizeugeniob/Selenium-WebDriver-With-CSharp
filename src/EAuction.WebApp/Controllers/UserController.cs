@@ -24,10 +24,10 @@ namespace EAuction.WebApp.Controllers
             {
                 Email = model.Email,
                 Password = model.Password,
-                Interested = new Interested(model.Nome)
+                Interested = new Interested(model.Name)
             });
 
-            return RedirectToAction("Agradecimento");
+            return RedirectToAction("Thank");
         }
 
         [HttpGet]
