@@ -2,9 +2,10 @@ using EAuction.Selenium.Fixtures;
 using OpenQA.Selenium;
 using Xunit;
 
-namespace EAuction.Selenium
+namespace EAuction.Selenium.Tests
 {
-    public class WhenBrowsingHome : IClassFixture<TestFixture>
+    [Collection(Constants.CollectionDefinitionName)]
+    public class WhenBrowsingHome
     {
         private readonly IWebDriver _driver;
 
